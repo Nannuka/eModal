@@ -11,7 +11,7 @@
  * @params allowed elements:
  *     buttons  {array}:           An array of objects to configure buttons to modal footer; only able if message == string
  *     css      {object}:          CSS object try apply into message body; only able if message == string
- *     data     {object}:          Used for iframe with post data parameters              
+ *     data     {object}:          Used for iframe with post data parameters
  *     loading  {boolean}:         Set loading progress as message.
  *     message  {string|object}:   The body message string or the HTML element. e.g.: $(selector);
  *     size     {string}:          sm || lg || xl -> define the modal size.
@@ -65,7 +65,7 @@
             title: 'Attention',
             autofocus: false
         };
-        
+
         root = root || {};
         root.addLabel = addLabel;
         root.ajax = ajax;
@@ -233,9 +233,9 @@
 
             function createModalElement() {
                 return $('<div class="modal fade" tabindex="-1"><style>.modal-xl{width:96%;}.modal-body{max-height: calc(100vh - 145px);overflow-y: auto;}</style>' +
-                    '<div class=modal-dialog>' +
+                    '<div class=modal-dialog role="document">' +
                     '<div class=modal-content>' +
-                    ' <div class=modal-header><button type=button class="x close" data-dismiss=modal aria-label="Close"><span aria-hidden=true>&times;</span></button><h5 class=modal-title></h5></div>' +
+                    ' <div class=modal-header><h5 class=modal-title></h5><button type=button class="x close" data-dismiss=modal aria-label="Close"><span aria-hidden=true>&times;</span></button></div>' +
                     '</div>' +
                     '</div>' +
                     '</div>')
@@ -259,7 +259,7 @@
         }
 
         /**
-         * @param {String} version 
+         * @param {String} version
          * @returns {Boolean}
          */
         function _jQueryMinVersion(version) {
@@ -271,7 +271,7 @@
             var major = ver[0];
             var minor = ver[1];
             var patch = ver[2];
-        
+
             return !(
                 (major > $major) ||
                 (major === $major && minor > $minor) ||
@@ -474,8 +474,8 @@
                 setEModalOptions(data);
             }
 
-            var postData = params.data ? 
-                Object.keys(params.data).map(mapData).join(' ') : 
+            var postData = params.data ?
+                Object.keys(params.data).map(mapData).join(' ') :
                 '';
 
             var html = ('<div class=modal-body style="position: absolute;width: 100%;background-color: rgba(255,255,255,0.8);height: 100%;">%1%</div>' +
@@ -484,7 +484,7 @@
                 .replace('%1%', defaultSettings.loadingHtml)
                 .replace('%2%', postData);
 
-            var message = _jQueryMinVersion('3.0.0') ? 
+            var message = _jQueryMinVersion('3.0.0') ?
                 $(html).on('load', iframeReady):
                 $(html).load(iframeReady);
 
