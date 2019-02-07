@@ -1,5 +1,7 @@
-# eModal for Bootstrap [![Build Status](https://travis-ci.org/saribe/eModal.svg?branch=master)](https://travis-ci.org/saribe/eModal) [![CDNJS](https://img.shields.io/cdnjs/v/eModal.svg)](https://cdnjs.com/libraries/eModal)
 **eModal** is a Easy way to manage modal dialogs using bootstrap.
+
+## Fork Information
+We made this fork for more compatibility with bootstrap 4.
 
 ## Current Version
 1.2.67
